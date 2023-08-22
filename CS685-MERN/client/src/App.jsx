@@ -1,21 +1,17 @@
-
+import {Route, Routes} from "react-router-dom";
 import './App.css'
+import IndexPage from "./pages/IndexPage";
+import Layout from "./Layout";
+import CreateStudentForm from "./pages/CreateStudentForm";
 
 function App() {
   return (
-    <div>
-      <header className="p-4 flex justify-between bg-primary">
-        <a href=''>
-          Logo
-        </a>
-        <div className="flex gap-4">
-          <div>Create Student</div>
-          <div>Submit Course Details</div>
-          <div>Map Student to Course</div>
-        </div>
-      </header>
-    </div>
-      
+    <Routes>
+      <Route path="/" element={<Layout />}> 
+        <Route index element={<IndexPage />}/>
+        <Route path="/createstudentform" element={<CreateStudentForm />}/>
+      </Route>
+    </Routes>  
   )
 }
 
